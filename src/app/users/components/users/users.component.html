@@ -1,0 +1,14 @@
+<h4 style="text-align: center;">Users table</h4>
+
+<div *ngIf="isLoading$ | async">Loading...</div>
+
+<div *ngIf="error$ | async as error">{{ error }}</div>
+
+<div class="userTable">
+    <table style="border: solid 1px; width: 100%">
+      <tr *ngFor="let user of users$ | async" style="border-bottom: solid;">
+        <td class="name">{{ user?.name }}</td>
+        <td class="city" style="text-align: right;">{{ user?.address?.city }}</td>
+      </tr>
+    </table>
+</div>
