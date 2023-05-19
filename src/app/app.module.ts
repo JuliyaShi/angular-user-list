@@ -6,7 +6,10 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersModule } from './users/users.module';
-import { UsersComponent } from './users/components/users/users.component';
+import { FormsModule } from '@angular/forms';
+import { DatesService } from './dates.service';
+import { CustomersModule } from './customers/customers.module';
+import { RouterOutlet } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,11 +19,14 @@ import { UsersComponent } from './users/components/users/users.component';
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FormsModule,
     UsersModule,
+    CustomersModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot(),
+    RouterOutlet,
   ],
-  providers: [],
+  providers: [DatesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

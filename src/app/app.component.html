@@ -1,1 +1,8 @@
+<h4>Angular test</h4>
+<customers></customers>
+<router-outlet></router-outlet>
+<a routerLink="/">Home</a>
+<input type="text" [value]="value" (keyup)="changeValue($event)">
+<input [(ngModel)] = "value">
+{{ value }}
 <users></users>
